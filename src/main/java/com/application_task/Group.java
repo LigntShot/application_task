@@ -5,11 +5,18 @@ package com.application_task;
  * @author Shablonov Dennis
  * @version 0.1
  */
-public class Group {
+class Group {
+    /** Group ID field */
     int gid;
+    /** User IDs field */
     int[] uids;
 
-    public Group(int gid, int[] uids) {
+    /**
+     * Constructor for this class
+     * @param gid - Group ID
+     * @param uids Array of User IDs
+     */
+    Group(int gid, int[] uids) {
         this.gid = gid;
         this.uids = uids;
     }
