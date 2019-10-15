@@ -31,6 +31,7 @@ public class id_scrambler {
         String inputPath = args[0];
 
         /* Словарь, хранящий значения  <uid, numOccur>, где numOccur - количество совпадений */
+        /* Словарь, так как с ним проще избежать повтроений ключей (uid'ов) */
         HashMap<Integer, Integer> usrDict = new HashMap<Integer, Integer>();
 
         /* Поток распакованного файла */
