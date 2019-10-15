@@ -1,20 +1,20 @@
 package com.application_task;
 
 /**
- * Class, describing a social network group with a <b>gid</b> and an array of <b>uids</b>
- * @author Shablonov Dennis
- * @version 0.1
+ * Класс, описывающий группу соц. сети с помощью<b>gid</b> и массива <b>uids</b>
+ * @author Шаблонов Денис
+ * @version 1.0
  */
 class Group {
-    /** Group ID field */
-    int gid;
-    /** User IDs field */
+    /** Поле ИД Группы*/
+    private int gid;
+    /** Поле ИДшников пользователей*/
     int[] uids;
 
     /**
-     * Constructor for this class
-     * @param gid - Group ID
-     * @param uids Array of User IDs
+     * Конструктор
+     * @param gid - ИД Группы
+     * @param uids Массив ИДшников пользователей
      */
     Group(int gid, int[] uids) {
         this.gid = gid;
