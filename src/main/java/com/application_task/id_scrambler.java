@@ -20,7 +20,7 @@ import java.util.*;
  */
 public class id_scrambler {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
         /* Делаем кастомный парсер с кастомным методом десериазилации */
         GsonBuilder builder = new GsonBuilder();
@@ -99,7 +99,8 @@ public class id_scrambler {
             }
         }
         if (resultUid == -1) {
-            throw new FileNotFoundException("UID wasn't found");
+            System.err.println("No UID was found");
+            return;
         }
         System.out.println(resultUid);
 
