@@ -44,12 +44,12 @@ public class id_scrambler {
             tarIn = new TarArchiveInputStream(bzIn);
         }
         catch (FileNotFoundException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(e.getMessage());
             return;
         }
         catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println("Undefined exception: " + e.getMessage());
             return;
         }
@@ -80,7 +80,7 @@ public class id_scrambler {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(e.getMessage());
             return;
         }
@@ -91,7 +91,10 @@ public class id_scrambler {
         Integer resultValue = Collections.max(usrDict.values());
         Integer resultUid = -1;
 
+
+
         /* Ищем ключ по значению */
+        /* Здесь производительность проседает больше всего, был бы способ побыстрее... */
         Set<Map.Entry<Integer,Integer>> entrySet = usrDict.entrySet();
         for (Map.Entry<Integer,Integer> pair : entrySet) {
             if (resultValue.equals(pair.getValue())) {
@@ -107,7 +110,7 @@ public class id_scrambler {
         try {
             tarIn.close();
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println(e.getMessage());
         }
     }
