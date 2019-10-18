@@ -21,6 +21,8 @@ import java.util.*;
 public class id_scrambler {
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
+
 
         /* Делаем кастомный парсер с кастомным методом десериазилации */
         GsonBuilder builder = new GsonBuilder();
@@ -33,6 +35,7 @@ public class id_scrambler {
         /* Словарь, хранящий значения  <uid, numOccur>, где numOccur - количество совпадений */
         /* Словарь, так как с ним проще избежать повтроений ключей (uid'ов) */
         HashMap<Integer, Integer> usrDict = new HashMap<Integer, Integer>();
+//        LinkedHashMap<Integer, Integer> usrDict2 = new LinkedHashMap<Integer, Integer>();
 
         /* Поток распакованного файла */
         TarArchiveInputStream tarIn;
@@ -113,5 +116,8 @@ public class id_scrambler {
 //            e.printStackTrace();
             System.err.println(e.getMessage());
         }
+
+        long endTime = System.nanoTime();
+        System.out.println("Running time: " + ((endTime - startTime)/1000000) + " ms");
     }
 }
